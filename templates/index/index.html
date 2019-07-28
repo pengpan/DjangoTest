@@ -5,8 +5,37 @@
     <title>index</title>
     <link href="static/css/main.css" rel="stylesheet">
     <script src="static/js/jquery-3.1.1.min.js"></script>
+    <script>
+        $(function () {
+            $.ajax({
+                url: 'json-data',
+                data: {},
+                type: 'get',
+                dataType: 'json',
+                success: function (data) {
+                    console.log(data);
+                    $("#name_val").html(data.name);
+                    $("#age_val").html(data.age);
+                    $("#city_val").html(data.city);
+                }
+            });
+        })
+    </script>
 </head>
 <body>
 Hello, Django!
+
+<p>
+    <span>name:</span>
+    <span id="name_val"></span>
+</p>
+<p>
+    <span>age:</span>
+    <span id="age_val"></span>
+</p>
+<p>
+    <span>city:</span>
+    <span id="city_val"></span>
+</p>
 </body>
 </html>
