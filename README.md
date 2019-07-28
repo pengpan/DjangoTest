@@ -11,3 +11,10 @@
 ## Document
 
 - [Django 文档](https://docs.djangoproject.com/zh-hans/)
+
+## Notes
+
+- 创建 Django 应用
+```
+python3 manage.py startapp hello
+```
