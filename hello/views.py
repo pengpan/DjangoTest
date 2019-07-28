@@ -23,16 +23,15 @@ def post_request(request):
     body: json = json.loads(request.body)
     print(body)
 
-    success: bool = True
+    success: bool = False
     msg: str = ""
     if body["name"] == "":
-        success = False
-        msg = "name cannot be empty"
-    if body["age"] == "":
-        success = False
-        msg = "age cannot be empty"
-    if body["city"] == "":
-        success = False
-        msg = "city cannot be empty"
+        msg = "name cannot be empty."
+    elif body["age"] == "":
+        msg = "age cannot be empty."
+    elif body["city"] == "":
+        msg = "city cannot be empty."
+    else:
+        success = True
 
     return JsonResponse({"success": success, "msg": msg})
