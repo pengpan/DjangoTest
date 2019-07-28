@@ -13,10 +13,22 @@
                 type: 'get',
                 dataType: 'json',
                 success: function (data) {
-                    console.log(data);
+                    console.log("json-data", data);
                     $("#name_val").html(data.name);
                     $("#age_val").html(data.age);
                     $("#city_val").html(data.city);
+                }
+            });
+
+            var post_request_params = {"name": "Not Sure", age: 25, "city": ""};
+            $.ajax({
+                url: 'post-request',
+                data: JSON.stringify(post_request_params),
+                type: 'post',
+                dataType: 'json',
+                contentType: 'application/json',
+                success: function (data) {
+                    console.log("post-request", data)
                 }
             });
         })
