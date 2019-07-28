@@ -14,6 +14,10 @@
 
 ## Notes
 
+- 运行程序
+```
+python3 manage.py runserver
+```
 - 创建 Django 应用
 ```
 python3 manage.py startapp hello
